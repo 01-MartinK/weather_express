@@ -1,0 +1,13 @@
+div.container
+    div.row
+        div.col-md-6.mx-auto.text-center.bg-primary.mt-5.p-5.rounded
+            h1#location
+            ul.list-group.mt-3
+                li.list-group-item#description
+                li.list-group-item#temp
+            h1.mt-3 Change City 
+            form#change-city
+                div.form-group
+                    label(for="city-name") City 
+                    input(type="text").form-control#city-name
+                input(type="submit" value="Save changes").btn.btn-grey
