@@ -6,8 +6,8 @@ div.container
                 li.list-group-item#description #{description}
                 li.list-group-item#temp #{temp}
             h1.mt-3 Change City 
-            form#change-city
+            form(method="post", action="/")#change-city
                 div.form-group
                     label(for="city-name") City 
-                    input(type="text").form-control#city-name
+                    input(type="text" name="cityname").form-control#city-name
                 input(type="submit" value="Save changes").btn.btn-grey
