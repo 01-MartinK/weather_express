@@ -1,13 +1,17 @@
 div.container
     div.row
         div.col-md-6.mx-auto.text-center.bg-primary.mt-5.p-5.rounded
-            h1#location #{city}
-            ul.list-group.mt-3
-                li.list-group-item#description #{description}
-                li.list-group-item#temp #{temp}
-            h1.mt-3 Change City 
-            form(method="post", action="/")#change-city
-                div.form-group
-                    label(for="city-name") City 
-                    input(type="text" name="cityname").form-control#city-name
-                input(type="submit" value="Save changes").btn.btn-grey
+            if error === null
+                h1#location #{city}
+                ul.list-group.mt-3
+                    li.list-group-item#description #{description}
+                    li.list-group-item#temp #{temp}
+                h1.mt-3 Change City 
+                form(method="post", action="/")#change-city
+                    div.form-group
+                        label(for="city-name") City 
+                        input(type="text" name="cityname").form-control#city-name
+                    input(type="submit" value="Save changes").btn.btn-grey
+            else
+                div(role="alert").alert.alert-danger #{error}
+                a(href="/" role="button").btn.btn-secondary.text-white Try again
